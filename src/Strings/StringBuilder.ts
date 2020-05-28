@@ -1,5 +1,5 @@
 
-import { Error, isNull, isNullOrEmpty } from "../mod.ts";
+import { Error, isNull, isNullOrEmpty } from "../../mod.ts";
 
 
 /**

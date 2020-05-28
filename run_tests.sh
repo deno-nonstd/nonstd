@@ -4,4 +4,4 @@
 
 deno test ./Tests/test_Strings.ts
 deno test ./Tests/test_StringBuilder.ts
-
+deno test ./Tests/test_VerbalExpressions.ts

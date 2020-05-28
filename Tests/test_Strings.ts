@@ -14,7 +14,6 @@ import {
   assertThrowsAsync,
   unimplemented,
   unreachable
-// @ts-ignore
 } from "https://deno.land/std/testing/asserts.ts";
 
 import {
@@ -28,7 +27,6 @@ import {
   startsWith,
   endsWith,
   indexOf
-// @ts-ignore
 } from "../mod.ts";
 
 

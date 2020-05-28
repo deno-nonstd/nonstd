@@ -6,7 +6,7 @@ export {
 
 export {
   StringBuilder
-} from "./src/StringBuilder.ts";
+} from "./src/Strings/StringBuilder.ts";
 
 export {
   Errors as Error,
@@ -23,5 +23,11 @@ export {
   startsWith,
   endsWith,
   indexOf
-} from "./src/Strings.ts";
+} from "./src/Strings/Strings.ts";
 
+export {
+  RegExpFlags,
+  Inputs,
+  VerbalExpression,
+  VerEx
+} from "./src/Expressions/VerbalExpressions.ts";
