@@ -14,6 +14,7 @@ export interface VersionInfo {
   MainFile: string;
   CurrentVersion: string;
   Message?: string;
+  HideErrorMessage?: boolean;
   ErrorMessage?: string;
 }
 
@@ -35,8 +36,8 @@ export async function checkIfNewer(info: VersionInfo): Promise<VersionResult> {
       }
       else {
         console.log(`
-  The current version of ${info.AppName} is ${info.CurrentVersion}.  Update ${next} is available for immediate 
-   install.  To update ${info.AppName}, type the following at the command line:
+  The current version of ${info.AppName} is ${info.CurrentVersion}.  Update ${next} is now available. 
+   To update ${info.AppName}, type the following at the command line:
       
  $ deno install -Af -n ${info.AppName} https://deno.land/x/${info.Org}/${info.Repo}/${info.MainFile}
         `);
@@ -45,11 +46,13 @@ export async function checkIfNewer(info: VersionInfo): Promise<VersionResult> {
   }
   catch (e) {
     error = e;
-    if (info.ErrorMessage) {
-      console.log(info.ErrorMessage);
-    }
-    else {
-      console.log(`Warning: Attempt to check for latest version of ${info.AppName} failed.`);
+
+    if (!info.HideErrorMessage) {
+      if (info.ErrorMessage) {
+        console.log(info.ErrorMessage);
+      } else {
+        console.log(`Warning: Attempt to check latest version of ${info.AppName} failed.`);
+      }
     }
   }
 
