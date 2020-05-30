@@ -1,55 +1,21 @@
 
 import * as semver from "https://deno.land/x/semver@v1.0.0/mod.ts";
 
-export class VersionInfo {
-  private _appName: string;
-  private _org: string;
-  private _repo: string;
-  private _mainFile: string;
-  private _currentVersion: string;
-  private _message?: string;
-  private _errorMessage?: string;
 
-  constructor(
-            appName: string,
-            org: string,
-            repo: string,
-            main: string,
-            currentVersion: string,
-            message?: string,
-            errorMessage?: string
-  ) {
-    this._appName = appName;
-    this._org = org;
-    this._repo = repo;
-    this._mainFile = main;
-    this._currentVersion = currentVersion;
-    if (message) { this._message = message; }
-    if (errorMessage) { this._errorMessage = errorMessage; }
-  }
-
-  public get AppName(): string { return this._appName }
-  public get Org(): string { return this._org }
-  public get Repo(): string { return this._repo }
-  public get MainFile(): string { return this._mainFile }
-  public get CurrentVersion(): string { return this._currentVersion }
-  public get Message(): string | undefined{ return this._message }
-  public get ErrorMessage(): string | undefined { return this._errorMessage }
+export interface VersionResult {
+  readonly Result: boolean;
+  readonly Error?: Error;
 }
 
-export class VersionResult {
-  private _result: boolean;
-  private _error?: Error;
-
-  constructor(result: boolean, error?: Error) {
-    this._result = result;
-    if (error) { this._error = error }
-  }
-
-  public get Result(): boolean { return this._result }
-  public get Error(): Error | undefined { return this._error }
+export interface VersionInfo {
+  AppName: string;
+  Org: string;
+  Repo: string;
+  MainFile: string;
+  CurrentVersion: string;
+  Message?: string;
+  ErrorMessage?: string;
 }
-
 
 
 export async function checkIfNewer(info: VersionInfo): Promise<VersionResult> {
@@ -87,5 +53,5 @@ export async function checkIfNewer(info: VersionInfo): Promise<VersionResult> {
     }
   }
 
-  return new VersionResult(result, error);
+  return { Result: result, Error: error } as VersionResult;
 }
