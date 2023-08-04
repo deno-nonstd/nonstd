@@ -1,8 +1,8 @@
 
 import { assertThrows, assertThrowsAsync } from "https://deno.land/std@v0.56.0/testing/asserts.ts";
-import { assertNotThrows, assertNotThrowsAsync } from "./assertNotThrow.ts";
+import { assertNotThrows, assertNotThrowsAsync } from "../src/assertNotThrows.ts";
 
-import {Errors} from "./Errors.ts";
+import {Errors} from "../src/Errors.ts";
 let { test } = Deno;
 
 

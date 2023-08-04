@@ -31,3 +31,23 @@ export {
   VerbalExpression,
   VerEx
 } from "./src/Expressions/VerbalExpressions.ts";
+
+export {
+  getProperty,
+  setProperty,
+  getTypedKeys,
+  isDefined,
+  isPlainObj,
+  isArrayish,
+  swizzle,
+  IPredicate,
+  union
+} from "./src/Types/Types.ts";
+
+
+export {
+  isInteger,
+  isFloat,
+  isIntegersOnly,
+  containsFloats
+} from "./src/Numbers/Numbers.ts";

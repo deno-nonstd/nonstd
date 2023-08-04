@@ -7,11 +7,10 @@ import { Error, isNull, isNullOrEmpty } from "../../mod.ts";
  *   large strings efficiently.
  *
  *  @file StringBuilder is used to efficiently join many strings together.
- *  @author Shawn Bullock <http://github.com/evosland>
- *  @version 1.0.0
+ *  @author Shawn Bullock <http://github.com/deno-nonstd>
  *  @license MIT
  *
- *  @see https://github.com/evosland/nonstd
+ *  @see https://github.com/deno-nonstd/nonstd
  *
  */
 

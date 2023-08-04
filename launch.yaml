@@ -1,0 +1,34 @@
+---
+deno:
+  test:
+    main: Tests/test_Strings.ts
+    dotenv:
+    security:
+      allow-all: true
+      allow-env:
+      allow-hrtime:
+      allow-net:
+      allow-plugin:
+      allow-read:
+      allow-run:
+      allow-write:
+      allow-none:
+
+    options:
+      cached-only:
+      cert:
+      config:
+      failfast:
+      filter:
+      help:
+      importmap:
+      inspect:
+      inspect-brk:
+      lock:
+      log-level:
+      no-remote:
+      quiet:
+      reload:
+      seed:
+      unstable:
+      v8-flags:
